@@ -22,9 +22,9 @@ public abstract class ProjectileMixin extends Projectile {
 
 	@Inject(at = @At("HEAD"), method = "onHitBlock")
 	private void breakglass(BlockHitResult blockHitResult, CallbackInfo info) {
-		if (level().getBlockState(blockHitResult.getBlockPos()).is(ShootGlassMod.BREAKABLE_BLOCKS)) {
-			level().destroyBlock(blockHitResult.getBlockPos(), true);
-			if (!this.level().isClientSide)
+		if (level.getBlockState(blockHitResult.getBlockPos()).is(ShootGlassMod.BREAKABLE_BLOCKS)) {
+			level.destroyBlock(blockHitResult.getBlockPos(), true);
+			if (!this.level.isClientSide)
 				this.remove(Entity.RemovalReason.DISCARDED);
 		}
 	}
