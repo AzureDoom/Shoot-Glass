@@ -1,0 +1,9 @@
+{
+  "required" : true,
+  "package" : "mod.azure.shootglass.mixin",
+  "compatibilityLevel" : "JAVA_17",
+  "mixins" : [ "ProjectileMixin" ],
+  "injectors" : {
+    "defaultRequire" : 1
+  }
+}
