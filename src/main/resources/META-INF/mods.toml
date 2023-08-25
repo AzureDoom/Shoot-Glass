@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[43,)" 
+license="MIT"
+issueTrackerURL="https://github.com/AzureDoom/Shoot-Glass/issues"
+[[mods]] 
+modId="shootglass" 
+version="${file.jarVersion}" 
+displayName="Shoot Glass" 
+logoFile="logo.png" 
+authors="AzureDoom"
+description='''
+Did you wish arrows could break glass? Well it does now!
+'''
+[[dependencies.shootglass]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[43,)" 
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.shootglass]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"
