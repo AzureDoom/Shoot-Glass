@@ -57,7 +57,7 @@ if (file('key.properties').exists()) {
         	releaseType = "release"
         	changelogType = 'text'
         	changelog = file('CHANGELOG.txt')
-			addGameVersion("1.20.1")
+			addGameVersion("1.20.2")
 			addGameVersion("Quilt")
 			addGameVersion("Fabric")
 			addGameVersion("Java 17")
@@ -87,7 +87,7 @@ if (file('key.properties').exists()) {
 		versionNumber = project.mod_version 
 		uploadFile = remapJar 
 		changelog = rootProject.file("changelog.txt").text
-		gameVersions = ['1.20.1']
+		gameVersions = ['1.20.2']
 		loaders = ['fabric','quilt']
 		dependencies { 
         	required.project "fabric-api"
