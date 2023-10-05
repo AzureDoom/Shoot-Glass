@@ -47,32 +47,20 @@ jar {
 }
 
 if (file('key.properties').exists()) {
-    curseforge {
-    	def curseProp = new Properties()
-    	File secretPropsFile = file("key.properties")
-    	curseProp.load(secretPropsFile.newInputStream())
-    	project {
-        	apiKey = curseProp.getProperty('curseKey')
-        	id = "906569"
-        	releaseType = "release"
-        	changelogType = 'text'
-        	changelog = file('CHANGELOG.txt')
-			addGameVersion("1.20.2")
-			addGameVersion("Quilt")
-			addGameVersion("Fabric")
-			addGameVersion("Java 17")
-        	relations {
-            	requiredDependency 'fabric-api'  
-        	}
-        	mainArtifact(remapJar)
+    task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+        def curseProp = new Properties()
+        File secretPropsFile = file("key.properties")
+        curseProp.load(secretPropsFile.newInputStream())
+        apiToken = curseProp.getProperty("curseKey")
 
-        	afterEvaluate {
-            	uploadTask.dependsOn("remapJar")
-        	}
-    	}
-    	options {
-        	forgeGradleIntegration = false
-    	}
+        def mainFile = upload("906569", remapJar)
+        mainFile.releaseType = "release"
+        mainFile.changelogType = "text"
+        mainFile.addRequirement "fabric-api"
+        mainFile.changelog = file("CHANGELOG.txt")
+        mainFile.addModLoader("Fabric", "Quilt")
+        mainFile.addJavaVersion("Java 17")
+        mainFile.addGameVersion("1.20.2")
     }
 }
 
@@ -81,15 +69,15 @@ if (file('key.properties').exists()) {
 		def modrinthProp = new Properties()
 		File secretPropsFile = file("key.properties")
 		modrinthProp.load(secretPropsFile.newInputStream())
-		
+
 		token = modrinthProp.getProperty('modrinthKey')
-		projectId = 's4mejB0R' 
-		versionNumber = project.mod_version 
-		uploadFile = remapJar 
+		projectId = 's4mejB0R'
+		versionNumber = project.mod_version
+		uploadFile = remapJar
 		changelog = rootProject.file("changelog.txt").text
 		gameVersions = ['1.20.2']
 		loaders = ['fabric','quilt']
-		dependencies { 
+		dependencies {
         	required.project "fabric-api"
    		}
 	}
