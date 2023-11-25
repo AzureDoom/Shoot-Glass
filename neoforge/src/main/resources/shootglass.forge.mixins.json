@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "mod.azure.shootglass.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "azurelib.refmap.json",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "ProjectileMixin"
+  ]
+}
