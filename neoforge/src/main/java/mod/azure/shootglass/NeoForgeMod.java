@@ -1,14 +1,14 @@
 package mod.azure.shootglass;
 
+import mod.azure.azurelib.AzureLibMod;
+import mod.azure.azurelib.config.format.ConfigFormats;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
 @Mod(ShootGlass.MOD_ID)
 public final class NeoForgeMod {
 
-    public static NeoForgeMod instance;
-
     public NeoForgeMod() {
-        instance = this;
+        ShootGlass.shootGlassConfig = AzureLibMod.registerConfig(ShootGlassConfig.class,
+                ConfigFormats.json()).getConfigInstance();
     }
 }
