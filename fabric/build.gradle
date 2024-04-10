@@ -93,11 +93,20 @@ if (file('key.properties').exists()) {
             requires {
                 slug = "fabric-api"
             }
+            requires {
+                slug = "azurelib"
+            }
         }
         modrinth {
             projectId = "s4mejB0R"
             accessToken = releaseProp.getProperty('modrinthKey')
             minecraftVersions.add("1.20.1")
+            requires {
+                slug = "fabric-api"
+            }
+            requires {
+                slug = "azurelib"
+            }
         }
     }
 }

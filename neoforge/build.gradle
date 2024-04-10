@@ -115,11 +115,17 @@ if (file('key.properties').exists()) {
             projectSlug = "shoot-glass"
             accessToken = releaseProp.getProperty("curseKey")
             minecraftVersions.add("1.20.1")
+            requires {
+                slug = "azurelib"
+            }
         }
         modrinth {
             projectId = "s4mejB0R"
             accessToken = releaseProp.getProperty('modrinthKey')
             minecraftVersions.add("1.20.1")
+            requires {
+                slug = "azurelib"
+            }
         }
     }
 }
