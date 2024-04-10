@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
-public class ShootGlass {
+public record ShootGlass() {
     public static final String MOD_ID = "shootglass";
     public static final TagKey<Block> BREAKABLE_BLOCKS = TagKey.create(Registries.BLOCK,
             modResource("breakable_blocks"));
