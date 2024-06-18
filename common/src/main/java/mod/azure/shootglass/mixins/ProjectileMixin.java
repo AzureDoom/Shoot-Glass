@@ -20,8 +20,8 @@ public abstract class ProjectileMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "onHitBlock")
     private void breakGlass(BlockHitResult blockHitResult, CallbackInfo info) {
-        if (level().getBlockState(blockHitResult.getBlockPos()).is(ShootGlass.BREAKABLE_BLOCKS)) {
-            level().destroyBlock(blockHitResult.getBlockPos(), true);
+        if (this.level().getBlockState(blockHitResult.getBlockPos()).is(ShootGlass.BREAKABLE_BLOCKS)) {
+            this.level().destroyBlock(blockHitResult.getBlockPos(), true);
             if (!this.level().isClientSide && ShootGlass.shootGlassConfig.removeProjectile)
                 this.remove(RemovalReason.DISCARDED);
         }

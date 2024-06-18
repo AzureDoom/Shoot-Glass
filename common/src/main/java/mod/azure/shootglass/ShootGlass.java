@@ -11,7 +11,7 @@ public record ShootGlass() {
             modResource("breakable_blocks"));
     public static ShootGlassConfig shootGlassConfig;
 
-    public static final ResourceLocation modResource(String name) {
+    public static ResourceLocation modResource(String name) {
         return new ResourceLocation(MOD_ID, name);
     }
 }
