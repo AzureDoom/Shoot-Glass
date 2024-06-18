@@ -1,4 +1,3 @@
-v2.0.2
+v2.0.3
 
-- Adds configuration to keep projectile instead of removing.
-    - This now requires AzureLib to be installed along with the mod.
+- Updated to 1.21!
