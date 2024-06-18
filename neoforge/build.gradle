@@ -56,8 +56,8 @@ if (file('key.properties').exists()) {
         modLoaders.add("neoforge")
 
         curseforge {
-            projectId = "906569"
-            projectSlug = "shoot-glass"
+            projectId = project.curseforgeID
+            projectSlug = project.projectSlug
             accessToken = releaseProp.getProperty("curseKey")
             minecraftVersions.add(project.minecraft_version)
             requires {
@@ -65,7 +65,7 @@ if (file('key.properties').exists()) {
             }
         }
         modrinth {
-            projectId = "s4mejB0R"
+            projectId = project.modrinthID
             accessToken = releaseProp.getProperty('modrinthKey')
             minecraftVersions.add(project.minecraft_version)
             requires {
